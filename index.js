@@ -48,7 +48,12 @@ const resolvers = {
   }
 };
 
-const srv = new ApolloServer({ typeDefs, resolvers });
+const srv = new ApolloServer({
+  typeDefs,
+  resolvers,
+  playground: true,
+  introspection: true
+});
 
 srv
   .listen({ port: PORT })
