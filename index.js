@@ -1,5 +1,7 @@
 const { ApolloServer, gql } = require("apollo-server");
 
+const PORT = process.env.PORT || 4000;
+
 const typeDefs = gql`
   type Todo {
     title: String
@@ -49,5 +51,5 @@ const resolvers = {
 const srv = new ApolloServer({ typeDefs, resolvers });
 
 srv
-  .listen({ port: 4000 })
+  .listen({ port: PORT })
   .then(res => console.log(`[🚀 RANDOM-STUFF 🚀] Server ready at ${res.url}`));
